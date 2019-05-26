@@ -89,7 +89,7 @@ should be somewhere around $30.
   Replace the cabinent top.
   12. Test the unit by connecting it to a CoCo, installing a cartridge in 
   each slot, and checking to see that each slot is selectable and 
-  accesslable.
+  accessable.
 
 
 

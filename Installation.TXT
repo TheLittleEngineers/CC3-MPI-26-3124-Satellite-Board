@@ -1,0 +1,96 @@
+Modifying the Multipack Interface for use with the CoCo 3
+
+All Multipack Interfaces, even those you purchase tommorrow, will require 
+a modification in order to be used successfully with the full features of 
+the CoCo 3. 
+
+The problem, according to Radio Shack in their Technical Bulletin # CC-29 
+is that the data buffer in the MultiPak enables I/O access in the address 
+range of $FF40 through $FF9F.  Only the addresses $FF40 through $FF7F are 
+required for Input/Output operations. 
+
+The CoCo 3's GIME chip uses registers located in the address range $FF80 
+through $FF9E, which the un-modified Multipak Interface allows to be in 
+conflict with external devices. 
+
+The modification to the Multipak disables this area in the Multipak's 
+decoding, preventing the use of that address range. 
+
+NOTE: This will effectively prevent your modified Multipak Interface from 
+working properly with I/O devices (such as the Wordpak and Wordpak II) 
+that use those address ranges - even if you are using it with a CoCo or 
+CoCo II that does not have the address conflict. 
+
+Radio Shack's products don't use this area, so they are correct when they 
+say that the modification is fully compatible with the CoCo and CoCo II - 
+what they don't say is that they can only guarentee that it remains 
+compatible with products that are under their control (i.e. if they sell 
+it, or designed it).  
+
+IF you make this modification, please be aware of the above, and judge 
+whether the loss of any I/O in the area $FF80-$FF9E will affect your 
+operations significantly. 
+
+           THERE ARE TWO DIFFERENT MODIFICATIONS !
+
+There are two different Multipak Interfaces, electrically, and thus two 
+different modifications. 
+
+For catalog # 26-3024 (including the old grey Multipak, and the large 
+white Multipak - be sure and CHECK (!) your catalog number before 
+spending the money for the modification to make sure you order the right 
+one !) - replace U8, the PAL, with: 
+
+   Part # AXX-7123  "PAL Chip for 26-3024"   $7.50 + $1.50 if ordered
+directly from Tandy National Parts (817 870-5662, 5663, 5664 or 5665),
+orders accepted only with charge card.
+
+
+
+For catalog #26-3124 (the smaller white Multipak), order:
+
+   Part # AXX-7119 "Satellite Board for 26-3124" $6.51 + $1.50 if ordered
+directly from Tandy National Parts (orders accepted with charge card 
+only).
+
+
+Note: the following installation instructions are provided as information
+only, and the installer assumes all responsibility in dealing with this
+modification.  If you are not absolutely sure you can do this 
+modification, and can fix anything you accidently break, it is HIGHLY
+suggested you instead take your Multipak Interface to Radio Shack and let 
+them have the modification done by their service technicians.  The cost
+should be somewhere around $30.
+
+  1. Remove the MPI case
+  2. Remove the three screws holding the logic board to the bottom case, 
+  leaving the transformer connected.  Remove all the metal clips holding 
+  the shield to the bottom of the PCB, noting their positions.  Remove 
+  the shield.  This is to avoid melting through the shield insulation 
+  while soldering.
+  3. Cut the trace coming from pin 52 of IC6 that connects pin 52 of IC6 
+  to pin 19 of IC1.
+  4. Position the satellite board over IC6, components up, with the 7 
+  wires facing towards the card edge.
+  5. Connect the 3 yellow wires to IC4 pins 3,9, and 11.  Any order is 
+  fine.
+  6. Connect the white wire to IC6 pin 52, taking care not to short the 
+  leads of IC6.
+  7. Connect the blue wire to IC1 pin 19.
+  8. Connect the black wire to IC5 pin 8.
+  9. Connect the red wire to IC5 pin 16.
+  10. Replace the shield and two of the logic board screws.. the one 
+  nearest the power switch, and the one near the selector switch.
+  11. Place the plastic spacer over the hole for the third screw. 
+  Position the hole in the satellite board over the spacer with the 
+  components up.  Insert the screw into the board and tighten.  The board 
+  must be positioned parallel to the edge card connector so that it fits 
+  into the channel between the cabinet top and the cartridge frame.  
+  Replace the cabinent top.
+  12. Test the unit by connecting it to a CoCo, installing a cartridge in 
+  each slot, and checking to see that each slot is selectable and 
+  accesslable.
+
+
+
+

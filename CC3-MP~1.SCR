@@ -1,0 +1,2 @@
+DRC SAVE 'F:/CC3-MPI-26-3124-Satellite-Board-CoCo-3-Upgrade-2009-Version-1-Revision-A/Production Ready/CC3-MPI-26-3124-Satellite-Board-CoCo-3-Upgrade-2009/Version-1/Revision-A/CC3-MPI-26-3124-Satellite-Board-CoCo-3-Upgrade-2009-V1RA.dru';
+RUN brd_to_dsn.ulp f;

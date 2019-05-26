@@ -1,0 +1,79 @@
+
+(rules PCB CC3-MPI-26-3124-Satellite-Board-CoCo-3-Upgrade-2009-V1RA
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 224)
+    (layer_rule 1#Top
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.8)
+    )
+    (layer_rule 16#Bottom
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.5)
+    )
+  )
+  (rule
+    (width 0.008)
+    (clear 0.006)
+    (clear 0.005 (type smd_to_turn_gap))
+    (clear 0.008 (type default_power))
+    (clear 0.008 (type power_power))
+  )
+  (padstack Round1$0.024000
+    (shape
+      (circle 1#Top 0.04 0.0 0.0)
+    )
+    (shape
+      (circle 16#Bottom 0.04 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    Round1$0.024000 Round1$0.024000 default
+  )
+  (via 
+    "Round1$0.024000-power" Round1$0.024000 power
+  )
+  (via_rule
+    default Round1$0.024000
+  )
+  (via_rule
+    power "Round1$0.024000-power"
+  )
+  (class default
+    CC3 IC1P19 IC4P3 IC4P9 IC4P11 IC6P52 N$6 N$8
+    N$9
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 0.008)
+    )
+    (circuit 
+      (use_layer 1#Top 16#Bottom)
+    )
+  )
+  (class power
+    GND VCC
+    (clearance_class power)
+    (via_rule power)
+    (rule
+      (width 0.03)
+    )
+    (circuit 
+      (use_layer 1#Top 16#Bottom)
+    )
+  )
+)
